@@ -3,8 +3,6 @@
   --main-family: "Nunito Sans", sans-serif;
 
   --main-bg-color: #19191b;
-  --dot-black: black;
-  --main-color: #cbc8c8;
   --secondary-color: #5454d4;
   --white-color: #fff;
 
@@ -14,7 +12,10 @@
   --section-title-size: 60px;
   --services-title-size: 28px;
   --nav-size: 18px;
+  --main-color: #cbc8c8;
+  --dot-black: black;
 }
+
 @media screen and (max-width: 840px) {
   :root {
     --services-title-size: 38px;

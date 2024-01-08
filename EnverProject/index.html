@@ -5,31 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/variable.css" />
     <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/adaptive.css">
+    <link rel="stylesheet" href="./styles/adaptive.css" />
     <title>Enver</title>
   </head>
   <body>
     <div class="container">
       <nav class="navbar">
+        <div class="test">
+          <ul>
+            <li><a href="#hero"> Home</a></li>
+            <li><a href="#services"> Services</a></li>
+            <li><a href="#portfolio"> Our Project</a></li>
+            <li><a href="#about"> About us</a></li>
+          </ul>
+        </div>
         <div>
           <img src="./images/logo.png" alt="Enver logo" />
         </div>
-        <div class="test">
         <ul class="nav-list">
-          <li><a href=""> Home</a></li>
-          <li><a href=""> Services</a></li>
-          <li><a href=""> Our Project</a></li>
-          <li><a href=""> About us</a></li>
+          <li><a href="#hero"> Home</a></li>
+          <li><a href="#services"> Services</a></li>
+          <li><a href="#portfolio"> Our Project</a></li>
+          <li><a href="#about"> About us</a></li>
         </ul>
-      </div>
         <div class="search">
           <input type="text" />
         </div>
-        <img src="./images/menu.svg" alt="menu" class="menu">
+        <img src="./images/menu.svg" alt="menu" class="menu" />
       </nav>
     </div>
 
-    <section class="hero">
+    <section id="hero" class="hero">
       <div class="container">
         <div class="wrapper">
           <div class="wrapper__left">
@@ -76,7 +82,7 @@
       </div>
     </section>
 
-    <section class="services">
+    <section id="services" class="services">
       <div class="container">
         <h2 class="services-title">The Service We Provide For You</h2>
         <div class="services-list">
@@ -98,7 +104,7 @@
 
           <div class="services-list__item">
             <img src="./images/graphic.svg" alt="" />
-            <p class="item__title">Graphic Designer</p>
+            <p class="item__title">Graphik Designer</p>
             <p class="item__description">
               We provide Graphic Design services, with the best designers
             </p>
@@ -129,67 +135,84 @@
         </div>
       </div>
     </section>
-    <section class="portfolio">
+
+    <section id="portfolio" class="portfolio">
       <div class="container">
         <h2 class="section-title">Our Awesome Portfolio</h2>
         <div class="portfolio-list">
-          <div class="portfolio-list_item_fisrt">
-            <img src="./images/image1.jpg" alt="portfolio-image-first" />
+          <div class="portfilio-list__item-first">
+            <img src="./images/image1.png" alt="portfolio-image1" />
           </div>
-          <div class="portfolio-list_item_second">
-            <img src="./images/image2.jpg" alt="portfolio-image-second" />
+          <div class="portfilio-list__item-second">
+            <img src="./images/image2.png" alt="portfolio-image2" />
           </div>
-          <div class="portfolio-list_item_third">
-            <img src="./images/image3.jpg" alt="portfolio-image-third" />
+          <div class="portfilio-list__item-third">
+            <img src="./images/image3.png" alt="portfolio-image3" />
           </div>
         </div>
         <div class="dots">
-          <div class="dots_item active"></div>
-          <div class="dots_item"></div>
-          <div class="dots_item"></div>
+          <div class="dots__item active"></div>
+          <div class="dots__item"></div>
+          <div class="dots__item"></div>
         </div>
+
         <div class="arrows">
-          <div class="arrow"><img src="./images/left_arrow.svg" alt="left"></div>
-          <div class="arrow active"><img src="./images/right_arrow.svg" alt="right"></div>
+          <div class="arrow">
+            <img src="./images/leftArrow.svg" alt="left" />
+          </div>
+          <div class="arrow active">
+            <img src="./images/rightArrow.svg" alt="right" />
+          </div>
         </div>
       </div>
     </section>
-    <section class="contact-us">
+
+    <section id="about" class="contact-us">
       <div class="container">
         <div class="wrapper">
-          <h2 class="section-title">Contact us for the service you want to use</h2>
+          <h2 class="section-title">
+            Contact us for the service you want to use
+          </h2>
           <button class="action-btn">Contact us</button>
         </div>
       </div>
     </section>
+
     <footer>
       <div class="container">
-        <div class="container">
-          <nav class="navbar">
-            <div>
-              <img src="./images/logo.png" alt="Enver logo" />
-            </div>
-            <ul>
-              <li><a href=""> Support</a></li>
-              <li><a href=""> Privacy Policy</a></li>
-              <li><a href=""> Terms and Conditions</a></li>
-            </ul>
-            <span class="site-data">2022 Enver, All Rights Reserved</span>
-          </nav>
+        <nav class="navbar">
+          <div>
+            <img src="./images/logo.png" alt="Enver logo" />
+          </div>
+          <ul>
+            <li>Support</li>
+            <li>Privacy Policy</li>
+            <li>Terms and Conditions</li>
+          </ul>
+          <span class="site-data">© 2022 Enver, All Rights Reserved</span>
+        </nav>
       </div>
     </footer>
     <script>
       let menu = document.querySelector(".menu");
       let ul = document.querySelector(".test");
+      let li = document.querySelector(".test li");
       let count = 1;
       menu.addEventListener("click", () => {
         console.log(ul);
         if (count % 2 === 0) {
-          ul.style.height = "0";
+          ul.style.height = "0px";
         } else {
-          ul.style.height = "300px";
+          ul.style.display = "block";
+          ul.style.height = "100px";
         }
         count++;
+      });
+      window.addEventListener("resize", (e) => {
+        console.log(e.target.screen.availWidth);
+        if (e.target.screen.availWidth >= 840) {
+          ul.style.height = 0;
+        }
       });
     </script>
   </body>
